@@ -1,0 +1,22 @@
+service: mono-repo-users-api
+
+plugins:
+  - serverless-webpack
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-east-1
+
+functions:
+  main:
+    handler: handler.main
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true
+

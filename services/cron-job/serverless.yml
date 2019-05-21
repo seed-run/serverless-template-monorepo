@@ -1,0 +1,19 @@
+service: mono-repo-cron-job
+
+plugins:
+  - serverless-webpack
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+
+functions:
+  main:
+    handler: handler.main
+    events:
+      - schedule:
+          rate: rate(5 minutes)
