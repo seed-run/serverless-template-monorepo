@@ -1,3 +1,3 @@
-function getCurrentTime() {
+export function getCurrentTime() {
   return new Date();
 }
